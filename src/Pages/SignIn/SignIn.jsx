@@ -1,5 +1,7 @@
+import LayoutC from '../../Components/Layout/Layout';
+
 const SignIn = () => {
-	return <div className='bg-red-200'>SignIn</div>;
+	return <LayoutC>Sign In</LayoutC>;
 };
 
 export default SignIn;

@@ -1,9 +1,7 @@
+import LayoutC from '../../Components/Layout/Layout';
+
 const NotFount = () => {
-	return (
-		<div className='bg-red-200'>
-			<h2>404 Not Found</h2>
-		</div>
-	);
+	return <LayoutC>Not Found</LayoutC>;
 };
 
 export default NotFount;

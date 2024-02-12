@@ -1,5 +1,6 @@
+import LayoutC from '../../Components/Layout/Layout';
 const MyOrder = () => {
-	return <div className='bg-red-200'>MyOrder</div>;
+	return <LayoutC>My Order</LayoutC>;
 };
 
 export default MyOrder;
