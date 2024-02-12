@@ -1,5 +1,7 @@
+import Layout from '../../Components/Layout/Layout';
+
 const Home = () => {
-	return <div className='bg-red-200'>Home</div>;
+	return <Layout>Home</Layout>;
 };
 
 export default Home;
