@@ -7,6 +7,8 @@ import NotFound from '../NotFound/NotFount';
 import SignIn from '../SignIn/SignIn';
 import Navbar from '../../Components/Navbar/Navbar';
 
+import { useState } from 'react';
+
 const AppRoutes = () => {
 	let routes = useRoutes([
 		{
@@ -37,10 +39,14 @@ const AppRoutes = () => {
 	return routes;
 };
 function App() {
+	const [darkMode, setDarkMode] = useState(true);
+
 	return (
 		<BrowserRouter>
-			<AppRoutes />
-			<Navbar />
+			<div className={darkMode && 'dark'}>
+				<AppRoutes />
+				<Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+			</div>
 		</BrowserRouter>
 	);
 }

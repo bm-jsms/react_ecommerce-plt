@@ -1,9 +1,11 @@
 import { NavLink } from 'react-router-dom';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
-const Navbar = () => {
+// eslint-disable-next-line react/prop-types
+const Navbar = ({ darkMode, setDarkMode }) => {
 	let activeStyle = 'underline underline-offset-4 underline-black/60';
 	return (
-		<nav className='flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light'>
+		<nav className='flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-normal bg-blue-400/55 dark:bg-black/95 text-black dark:text-white/90'>
 			<ul className='flex items-center gap-3'>
 				<li className='font-semibold text-lg'>
 					<NavLink
@@ -64,7 +66,7 @@ const Navbar = () => {
 				</li>
 			</ul>
 			<ul className='flex items-center gap-3'>
-				<li className='text-black/60'>email@email.com</li>
+				<li className='text-black/70 dark:text-white/50'>email@email.com</li>
 				<li>
 					<NavLink
 						to='/all'
@@ -105,6 +107,18 @@ const Navbar = () => {
 					>
 						🛒0
 					</NavLink>
+				</li>
+				<li
+					onClick={() => {
+						setDarkMode(!darkMode);
+					}}
+					className='p-2 rounded-full dark:bg-blue-600/40 bg-gray-900 transition-all'
+				>
+					{darkMode ? (
+						<MdLightMode className='text-lg cursor-pointer text-yellow-500' />
+					) : (
+						<MdDarkMode className='text-lg cursor-pointer text-blue-600' />
+					)}
 				</li>
 			</ul>
 		</nav>
