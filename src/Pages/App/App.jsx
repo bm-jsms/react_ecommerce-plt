@@ -1,4 +1,5 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom';
+import { ShoppingCartProvider } from '../../Context';
 import Home from '../Home/Home';
 import MyAccount from '../MyAccount/MyAccount';
 import MyOrder from '../MyOrder/MyOrder';
@@ -42,12 +43,14 @@ function App() {
 	const [darkMode, setDarkMode] = useState(true);
 
 	return (
-		<BrowserRouter>
-			<div className={darkMode && 'dark'}>
-				<AppRoutes />
-				<Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-			</div>
-		</BrowserRouter>
+		<ShoppingCartProvider>
+			<BrowserRouter>
+				<div className={darkMode && 'dark'}>
+					<AppRoutes />
+					<Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+				</div>
+			</BrowserRouter>
+		</ShoppingCartProvider>
 	);
 }
 
