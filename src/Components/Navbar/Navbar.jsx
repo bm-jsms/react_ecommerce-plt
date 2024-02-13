@@ -1,8 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
+import { useContext } from 'react';
+import { ShoppingCartContext } from '../../Context';
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ darkMode, setDarkMode }) => {
+	const context = useContext(ShoppingCartContext);
 	let activeStyle = 'underline underline-offset-4 underline-black/60';
 	return (
 		<nav className='flex justify-between items-center fixed top-0 z-10 w-full py-5 px-8 text-sm font-normal bg-blue-400 dark:bg-black text-black dark:text-white/90'>
@@ -105,7 +108,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 						to='/furniture'
 						className={({ isActive }) => (isActive ? activeStyle : undefined)}
 					>
-						🛒0
+						🛒{context.count}
 					</NavLink>
 				</li>
 				<li
