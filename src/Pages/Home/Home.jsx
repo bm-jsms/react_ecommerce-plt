@@ -1,6 +1,7 @@
 import LayoutC from '../../Components/Layout/Layout';
 import { Card } from '../../Components/Card/Card';
 import { useState, useEffect } from 'react';
+import ProductDetail from '../../Components/ProductDetail/ProductDetail';
 
 const Home = () => {
 	const [items, setItems] = useState([]);
@@ -17,6 +18,7 @@ const Home = () => {
 					<Card key={item.id} data={item} />
 				))}
 			</div>
+			<ProductDetail />
 		</LayoutC>
 	);
 };
