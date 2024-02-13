@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import { useContext } from 'react';
 import { ShoppingCartContext } from '../../Context';
+import { ShoppingBagIcon } from '@heroicons/react/20/solid';
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ darkMode, setDarkMode }) => {
@@ -103,13 +104,14 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 						Sign In{' '}
 					</NavLink>
 				</li>
-				<li>
+				<li className='flex items-center'>
 					<NavLink
 						to='/furniture'
 						className={({ isActive }) => (isActive ? activeStyle : undefined)}
 					>
-						🛒{context.count}
+						<ShoppingBagIcon className='h-6 w-6'></ShoppingBagIcon>
 					</NavLink>
+					<div>{context.count}</div>
 				</li>
 				<li
 					onClick={() => {
