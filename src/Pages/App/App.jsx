@@ -7,6 +7,7 @@ import MyOrders from '../MyOrders/MyOrders';
 import NotFound from '../NotFound/NotFount';
 import SignIn from '../SignIn/SignIn';
 import Navbar from '../../Components/Navbar/Navbar';
+import CheckoutSideMenu from '../../Components/CheckoutSideMenu/CheckoutSideMenu';
 
 import { useState } from 'react';
 
@@ -48,6 +49,7 @@ function App() {
 				<div className={darkMode && 'dark'}>
 					<AppRoutes />
 					<Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+					<CheckoutSideMenu />
 				</div>
 			</BrowserRouter>
 		</ShoppingCartProvider>
