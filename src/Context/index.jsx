@@ -10,12 +10,8 @@ export const ShoppingCartProvider = ({ children }) => {
 
 	// Products Detail . Open/Close
 	const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
-	const openProductDetail = () => {
-		setIsProductDetailOpen(true);
-	};
-	const closeProductDetail = () => {
-		setIsProductDetailOpen(false);
-	};
+	const openProductDetail = () => setIsProductDetailOpen(true);
+	const closeProductDetail = () => setIsProductDetailOpen(false);
 
 	// Products Detail . Show Product
 	const [productToShow, setProductToShow] = useState({});
