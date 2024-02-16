@@ -5,15 +5,20 @@ export const ShoppingCartContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export const ShoppingCartProvider = ({ children }) => {
+	// Shoping Card Count
 	const [count, setCount] = useState(0);
-	const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
 
+	// Products Detail . Open/Close
+	const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
 	const openProductDetail = () => {
 		setIsProductDetailOpen(true);
 	};
 	const closeProductDetail = () => {
 		setIsProductDetailOpen(false);
 	};
+
+	// Products Detail . Show Product
+	const [productToShow, setProductToShow] = useState({});
 
 	return (
 		<ShoppingCartContext.Provider
@@ -23,6 +28,8 @@ export const ShoppingCartProvider = ({ children }) => {
 				openProductDetail,
 				closeProductDetail,
 				isProductDetailOpen,
+				productToShow,
+				setProductToShow,
 			}}
 		>
 			{children}

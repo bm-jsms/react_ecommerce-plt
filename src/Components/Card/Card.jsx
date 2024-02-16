@@ -4,10 +4,15 @@ import { PlusIcon } from '@heroicons/react/20/solid';
 
 export const Card = data => {
 	const context = useContext(ShoppingCartContext);
+
+	const showProduct = ProductDetail => {
+		context.openProductDetail();
+		context.setProductToShow(ProductDetail);
+	};
 	return (
 		<div
 			className='bg-black/90 dark:bg-white/80 cursor-pointer w-56 h-60 rounded-lg'
-			onClick={() => context.openProductDetail()}
+			onClick={() => showProduct(data.data)}
 		>
 			<figure className='relative mb-2 w-full h-4/5'>
 				<span className='absolute bottom-0 left-0 bg-white/70 dark:bg-black/80 rounded-lg text-black dark:text-white text-xs m-2 px-3 py-0.5 font-medium'>
