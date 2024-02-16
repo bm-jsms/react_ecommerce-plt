@@ -16,7 +16,7 @@ const OrderCard = ({ title, imageURL, price }) => {
 			</div>
 			<div>
 				<p className='text-lg font-medium'>{price}</p>
-				<XMarkIcon className='h-6 w-6 cursor-pointer' />
+				<XMarkIcon className='h-6 w-6 cursor-pointer text-black dark:text-white' />
 			</div>
 		</div>
 	);
