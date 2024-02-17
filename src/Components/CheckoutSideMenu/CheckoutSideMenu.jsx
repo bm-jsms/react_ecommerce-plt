@@ -21,14 +21,16 @@ const CheckoutSideMenu = () => {
 					/>
 				</div>
 			</div>
-			{context.cardProducts.map(product => (
-				<OrderCard
-					key={product.id}
-					title={product.title}
-					imageURL={product.images}
-					price={product.price}
-				/>
-			))}
+			<div className='px-4 overflow-y-scroll'>
+				{context.cardProducts.map(product => (
+					<OrderCard
+						key={product.id}
+						title={product.title}
+						imageURL={product.images}
+						price={product.price}
+					/>
+				))}
+			</div>
 		</aside>
 	);
 };
