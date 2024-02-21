@@ -1,7 +1,7 @@
 import { XMarkIcon } from '@heroicons/react/24/solid';
 
 // eslint-disable-next-line react/prop-types
-const OrderCard = ({ title, imageURL, price }) => {
+const OrderCard = ({ id, title, imageURL, price, handleDelete }) => {
 	return (
 		<div className='flex justify-between items-center text-black dark:text-white mb-2'>
 			<div className='flex items-center gap-2'>
@@ -16,7 +16,10 @@ const OrderCard = ({ title, imageURL, price }) => {
 			</div>
 			<div className='flex items-center gap-2'>
 				<p className='text-lg font-medium'>${price}</p>
-				<XMarkIcon className='h-6 w-6 cursor-pointer' />
+				<XMarkIcon
+					className='h-6 w-6 cursor-pointer'
+					onClick={() => handleDelete(id)}
+				/>
 			</div>
 		</div>
 	);
