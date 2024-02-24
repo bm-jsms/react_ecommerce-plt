@@ -30,6 +30,9 @@ export const ShoppingCartProvider = ({ children }) => {
 	// Get Products
 	const [items, setItems] = useState([]);
 
+	// Get Products by Title
+	const [searchByTitle, setSearchByTitle] = useState(null);
+
 	useEffect(() => {
 		fetch('https://api.escuelajs.co/api/v1/products')
 			.then(response => response.json())
@@ -55,6 +58,8 @@ export const ShoppingCartProvider = ({ children }) => {
 				setOrder,
 				items,
 				setItems,
+				searchByTitle,
+				setSearchByTitle,
 			}}
 		>
 			{children}
