@@ -7,6 +7,20 @@ import { ShoppingCartContext } from '../../Context';
 const Home = () => {
 	const context = useContext(ShoppingCartContext);
 
+	const renderView = () => {
+		if (context.searchByTitle?.length > 0) {
+			if (context.filteredItems?.length > 0) {
+				return context.filteredItems?.map(item => (
+					<Card key={item.id} data={item} />
+				));
+			} else {
+				return <p>No results found</p>;
+			}
+		} else {
+			return context.items?.map(item => <Card key={item.id} data={item} />);
+		}
+	};
+
 	return (
 		<LayoutC>
 			<div className='flex w-80 items-center relative justify-center mb-4'>
@@ -21,9 +35,7 @@ const Home = () => {
 			/>
 
 			<div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
-				{context.items.map(item => (
-					<Card key={item.id} data={item} />
-				))}
+				{renderView()}
 			</div>
 			<ProductDetail />
 		</LayoutC>
