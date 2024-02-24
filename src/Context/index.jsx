@@ -100,6 +100,7 @@ export const ShoppingCartProvider = ({ children }) => {
 				),
 			);
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [items, searchByTitle, searchByCategory]);
 
 	return (
